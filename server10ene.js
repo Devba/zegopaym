@@ -4,7 +4,7 @@ import { insert } from './db.js'; // Ensure you have the insert function in your
 import fs from 'fs';
 
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8001;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
