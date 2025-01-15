@@ -88,9 +88,11 @@ app.post('/Eagle1', async (req, res) => {
 
 app.post('/Eagle2', async (req, res) => {
     const { TransactionID, reason } = req.body;
+    const {pm_id,  PropertyCode,ResidentID,TDate,TAmount,PayLeaseTransactionID  } = req.body;
+    console.log('Received body:', req.body);
 
     try {
-        const response = await Eagle2(req.body); // Pass the entire request body
+        const response = await Eagle2(PayLeaseTransactionID); // Pass the entire request body
         res.json(response);
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
@@ -103,7 +105,7 @@ async function Eagle2(params) {
     const values = [TransactionID];
 
     // Print all parameters to the console
-    console.log('Received parameters:', params);
+    
 
     try {
         const result = await query(sql, values);
