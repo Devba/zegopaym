@@ -84,6 +84,23 @@ app.post('/Eagle1', async (req, res) => {
     }
 });
 
+
+
+app.post('/Eagle2', (req, res) => {
+    const { TransactionID, reason } = req.body;
+
+    // Log the canceled transaction
+    const logMessage = `Transaction ${TransactionID} was canceled. Reason: ${reason}`;
+    fs.appendFile('canceled_transactions.log', logMessage + '\n', (err) => {
+        if (err) {
+            console.error('Error writing to file:', err);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+        res.json({ message: 'Canceled transaction logged successfully' });
+    });
+});
+
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
