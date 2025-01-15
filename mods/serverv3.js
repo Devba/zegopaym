@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { insert, executeQuery } from './db.js'; // Ensure you have the insert and executeQuery functions in your db.js
+import { insert, query } from './db.js'; // Ensure you have the insert and executeQuery functions in your db.js
 import fs from 'fs';
 
 const app = express();
@@ -98,11 +98,11 @@ app.post('/Eagle2', async (req, res) => {
 });
 
 async function Eagle2(TransactionID) {
-    const sql = `UPDATE Mastertransaction SET Voided = 'YES' WHERE TransactionID = ?`;
+    const sql = `UPDATE MasterTransactionTable SET Voided = 'YES' WHERE TransactionID = ?`;
     const values = [TransactionID];
 
     try {
-        const result = await executeQuery(sql, values);
+        const result = await query(sql, values);
         console.log('Update result:', result);
         return {
             message: 'Update successful',
