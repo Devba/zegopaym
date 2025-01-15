@@ -21,13 +21,12 @@ app.post('/Eagle1', async (req, res) => {
     const TransactionID  = PayLeaseTransactionID ; //pm_id;
     const fdate=TDate;
     
-    const aux=Math.floor(Math.random() * (20 - 0 + 1)) + 0;
-    console.log("eandom :",aux);
+    //const aux=Math.floor(Math.random() * (20 - 0 + 1)) + 0;    console.log("eandom :",aux);
 
     const ResidentReferenceID=ResidentID ;//17750 +aux; //ResidentID;
     const Amt=TAmount;
     const PropertyReferenceID=PropertyCode;//'f3f6cf42-a90';//PropertyCode;
-	const message=pm_id
+	const Zegopm_id=pm_id
     
 
      const processedTransaction = {
@@ -40,23 +39,24 @@ app.post('/Eagle1', async (req, res) => {
     };
 
 
+
+
     // Log the transaction details
-    console.log('Processed Transaction:', processedTransaction);
-    //const logMessage='Processed Transaction:'
+    console.log('Processed Transaction:', processedTransaction);    //const logMessage='Processed Transaction:'
     
 
     //console.log(logMessage);
-  fs.appendFile('transactions.log', JSON.stringify(processedTransaction) + '\n', (err) => {
-        if (err) {
-            console.error('Error writing to file:', err);
-        }
-    });
-    
+      fs.appendFile('transactions.log', JSON.stringify(processedTransaction) + '\n', (err) => {
+            if (err) {
+                console.error('Error writing to file:', err);
+            }
+        });
+        
 
 
  
 
-    const params = {fdate, TransactionID,ResidentReferenceID,Amt,PropertyReferenceID,message   };
+    const params = {fdate, TransactionID,ResidentReferenceID,Amt,PropertyReferenceID,Zegopm_id   };
 
 
     const columns = Object.keys(params).join(', ');
