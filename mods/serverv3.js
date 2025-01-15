@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { insert } from './db.js'; // Ensure you have the insert function in your db.js
+import { insert, executeQuery } from './db.js'; // Ensure you have the insert and executeQuery functions in your db.js
 import fs from 'fs';
 
 const app = express();
@@ -29,7 +29,7 @@ app.post('/Eagle1', async (req, res) => {
 	const Zegopm_id=pm_id
     
 
-     const processedTransaction = {
+     const processedTransaction = { 
         pm_id,
         PropertyCode,
         ResidentID,
@@ -86,20 +86,37 @@ app.post('/Eagle1', async (req, res) => {
 
 
 
-app.post('/Eagle2', (req, res) => {
+app.post('/Eagle2', async (req, res) => {
     const { TransactionID, reason } = req.body;
 
-    // Log the canceled transaction
-    const logMessage = `Transaction ${TransactionID} was canceled. Reason: ${reason}`;
-    fs.appendFile('canceled_transactions.log', logMessage + '\n', (err) => {
-        if (err) {
-            console.error('Error writing to file:', err);
-            return res.status(500).json({ error: 'Internal Server Error' });
-        }
-        res.json({ message: 'Canceled transaction logged successfully' });
-    });
+    try {
+        const response = await Eagle2(TransactionID);
+        res.json(response);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
 
+async function Eagle2(TransactionID) {
+    const sql = `UPDATE Mastertransaction SET Voided = 'YES' WHERE TransactionID = ?`;
+    const values = [TransactionID];
+
+    try {
+        const result = await executeQuery(sql, values);
+        console.log('Update result:', result);
+        return {
+            message: 'Update successful',
+            result: {
+                affectedRows: result.affectedRows,
+                changedRows: result.changedRows,
+                warningStatus: result.warningStatus
+            }
+        };
+    } catch (error) {
+        console.error('Error updating transaction:', error);
+        throw error;
+    }
+}
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
