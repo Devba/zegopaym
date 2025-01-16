@@ -102,7 +102,9 @@ app.post('/Eagle2', async (req, res) => {
 async function Eagle2(params) {
     const { TransactionID } = params;
     const sql = `UPDATE MasterTransactionTable SET Voided = 'YES' WHERE TransactionID = ?`;
-    const values = [TransactionID];
+    const values = params;//[TransactionID];
+    console.log('Update SQL for voiding :', sql);
+    console.log('Update values:', values);
 
     // Print all parameters to the console
     
