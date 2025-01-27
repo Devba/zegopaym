@@ -36,12 +36,12 @@ export async function insert(sql, params) {
     }
 }
 
-async function checkDatabaseStatus() {
+export async function checkDatabaseStatus() {
     let conn;
     try {
         conn = await pool.getConnection();
         console.log('Database connection successful');
-        console.log('Current date:', new Date().toLocaleString());
+        //console.log(['Current date:', new Date().toLocaleString()]);
     } catch (err) {
         console.error('Database connection failed:', err);
     } finally {

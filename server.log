@@ -1,0 +1,81 @@
+2025-01-27T08:36:17.405Z - Server running on port 8001
+2025-01-27T08:36:17.824Z - Database connection successful
+2025-01-27T08:36:17.835Z - Current date:
+2025-01-27T08:43:19.641Z - Server running on port 8001
+2025-01-27T08:43:19.999Z - Database connection successful
+2025-01-27T08:43:20.010Z - Current date:
+2025-01-27T08:43:37.981Z - Server running on port 8001
+2025-01-27T08:43:38.346Z - Database connection successful
+2025-01-27T08:43:38.357Z - Current date:
+2025-01-27T08:44:54.929Z - Server running on port 8001
+2025-01-27T08:44:55.278Z - Database connection successful
+2025-01-27T08:44:55.290Z - Current date:
+2025-01-27T08:44:55.290Z - Database connection successful
+2025-01-27T08:44:55.290Z - Current date:
+2025-01-27T08:48:10.567Z - Server running on port 8001
+2025-01-27T08:48:10.936Z - Database connection successful
+2025-01-27T08:48:10.948Z - Current date:
+2025-01-27T08:48:10.949Z - Database connection successful
+2025-01-27T08:48:10.949Z - Current date:
+2025-01-27T09:12:46.397Z - Server running on port 8001
+2025-01-27T09:12:46.784Z - Database connection successful
+2025-01-27T09:12:46.796Z - Current date:
+2025-01-27T09:18:11.357Z - Received body Zego Cancelation -Eagle2 :
+2025-01-27T09:18:11.357Z - Update SQL for voiding:
+2025-01-27T09:18:11.357Z - Update values:
+2025-01-27T09:23:04.531Z - Server running on port 8001
+2025-01-27T09:23:04.952Z - Database connection successful
+2025-01-27T09:23:04.963Z - Current date:
+2025-01-27T09:23:59.768Z - Server running on port 8001
+2025-01-27T09:24:07.673Z - Database connection successful
+2025-01-27T09:25:54.401Z - Server running on port 8001
+2025-01-27T09:25:59.237Z - Database connection successful
+2025-01-27T09:26:08.727Z - Current date:,27/1/2025, 10:25:59
+2025-01-27T09:26:30.521Z - Received body Zego Cancelation -Eagle2 :
+2025-01-27T09:27:02.003Z - Received body Zego Cancelation -Eagle2 :
+2025-01-27T09:27:35.781Z - Received body Zego Cancelation -Eagle2 :
+2025-01-27T09:31:25.571Z - Server running on port 8001
+2025-01-27T09:31:25.912Z - Database connection successful
+2025-01-27T09:31:25.924Z - Current date:,27/1/2025, 10:31:25
+2025-01-27T09:31:31.052Z - Received body Zego Cancelation -Eagle2 :
+2025-01-27T09:31:47.725Z - Update SQL for voiding:
+2025-01-27T09:32:00.019Z - Update values:
+2025-01-27T09:33:51.133Z - Server running on port 8001
+2025-01-27T09:33:51.475Z - Database connection successful
+2025-01-27T09:33:51.486Z - Current date:,27/1/2025, 10:33:51
+2025-01-27T09:33:54.085Z - Received body Zego Cancelation -Eagle2 :
+2025-01-27T09:34:01.492Z - Update SQL for voiding:,UPDATE MasterTransactionTable SET Voided = 'YES', ProcessedonExcel = '' WHERE PayLeaseTransactionID = ?
+2025-01-27T09:34:01.492Z - Update values:,hhhh2
+2025-01-27T09:35:20.478Z - Server running on port 8001
+2025-01-27T09:35:20.888Z - Database connection successful
+2025-01-27T09:35:20.899Z - Current date:,27/1/2025, 10:35:20
+2025-01-27T09:35:24.325Z - Received body Zego Cancelation -Eagle2 :
+2025-01-27T09:35:29.195Z - Update SQL for voiding:,UPDATE MasterTransactionTable SET Voided = 'YES', ProcessedonExcel = '' WHERE TransactionID = ?
+2025-01-27T09:35:29.195Z - Update values:,hhhh2
+2025-01-27T09:35:29.447Z - Update result:
+2025-01-27T09:38:02.594Z - Server running on port 8001
+2025-01-27T09:38:02.943Z - Database connection successful
+2025-01-27T09:38:02.954Z - Current date:,27/1/2025, 10:38:02
+2025-01-27T09:38:06.265Z - Received body Zego Cancelation -Eagle2 :
+2025-01-27T09:38:09.891Z - Update SQL for voiding:,UPDATE MasterTransactionTable SET Voided = 'YES', ProcessedonExcel = '' WHERE TransactionID = ?
+2025-01-27T09:38:09.891Z - Update values:,hhhh2
+2025-01-27T09:38:10.112Z - Update result:,[object Object]
+2025-01-27T09:39:45.285Z - Received body Zego Cancelation -Eagle2 :
+2025-01-27T09:39:45.285Z - Update SQL for voiding:,UPDATE MasterTransactionTable SET Voided = 'YES', ProcessedonExcel = '' WHERE TransactionID = ?
+2025-01-27T09:39:45.285Z - Update values:,hhhh2
+2025-01-27T09:39:45.507Z - Update result:,[object Object]
+2025-01-27T09:42:20.247Z - Server running on port 8001
+2025-01-27T09:42:20.596Z - Database connection successful
+2025-01-27T09:42:20.608Z - Current date:,27/1/2025, 10:42:20
+2025-01-27T09:42:24.531Z - Received body Zego Cancelation -Eagle2 :,[object Object]
+2025-01-27T09:42:24.534Z - Update SQL for voiding:,UPDATE MasterTransactionTable SET Voided = 'YES', ProcessedonExcel = '' WHERE TransactionID = ?
+2025-01-27T09:42:24.534Z - Update values:,hhhh2
+2025-01-27T09:42:24.758Z - Update result:,[object Object]
+2025-01-27T09:44:59.764Z - Server running on port 8001
+2025-01-27T09:45:00.155Z - Database connection successful
+2025-01-27T09:45:00.166Z - Current date:,27/1/2025, 10:45:00
+2025-01-27T09:49:45.897Z - Server running on port 8001
+2025-01-27T09:49:51.763Z - Database connection successful
+2025-01-27T09:49:55.045Z - ["Received body Zego Cancelation -Eagle2 :",{"pm_id":"6565656","PropertyCode":"333","ResidentID":"rrrr","TDate":"2025-01-06 18:38:56","TAmount":"122.40","PayLeaseTransactionID":"349184321","xxx":"111","TransactionID":"hhhh2"}]
+2025-01-27T09:49:55.047Z - ["Update SQL for voiding:","UPDATE MasterTransactionTable SET Voided = 'YES', ProcessedonExcel = '' WHERE TransactionID = ?"]
+2025-01-27T09:49:55.048Z - ["Update values:","hhhh2"]

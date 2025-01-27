@@ -1,9 +1,20 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { insert, query } from './db.js'; // Ensure you have the insert and executeQuery functions in your db.js
-
+import { Eagle2 } from './Eagles.js';
 
 import fs from 'fs';
+
+
+const logStream = fs.createWriteStream('server.log', { flags: 'a' });
+
+// Override console.log to write to the log file
+console.log = function (message) {
+    logStream.write(`${new Date().toISOString()} - ${typeof message === 'object' ? JSON.stringify(message) : message}\n`);
+    process.stdout.write(`${new Date().toISOString()} - ${message}\n`);
+};
+
+
 
 const app = express();
 const port = process.env.PORT || 8001;
@@ -89,44 +100,16 @@ app.post('/Eagle1', async (req, res) => {
 
 
 app.post('/Eagle2', async (req, res) => {
-    const { TransactionID, reason } = req.body;
-    const {pm_id,  PropertyCode,ResidentID,TDate,TAmount,PayLeaseTransactionID  } = req.body;
-    console.log('Received body:', req.body);
-
+    console.log(['Received body Zego Cancelation -Eagle2 :', req.body]);
     try {
-        const response = await Eagle2(PayLeaseTransactionID); // Pass the entire request body
+        const response = await Eagle2(req.body);
         res.json(response);
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
-async function Eagle2(params) {
-    const { TransactionID } = params;
-    const sql = `UPDATE MasterTransactionTable SET Voided = 'YES' ,ProcessedonExcel ='' WHERE TransactionID = ?`;
-    const values = params;//[TransactionID];
-    console.log('Update SQL for voiding :', sql);
-    console.log('Update values:', values);
 
-    // Print all parameters to the console
-    
-
-    try {
-        const result = await query(sql, values);
-        console.log('Update result:', result);
-        return {
-            message: 'Update successful',
-            result: {
-                affectedRows: result.affectedRows,
-                changedRows: result.changedRows,
-                warningStatus: result.warningStatus
-            }
-        };
-    } catch (error) {
-        console.error('Error updating transaction:', error);
-        throw error;
-    }
-}
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
